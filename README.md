@@ -9,7 +9,7 @@ git clone https://github.com/osaris/laravel-exa-frm-php-23.git
 2. Installer laravel sail :
 
 ```
-cd laravel-todomvc10
+cd laravel-exa-frm-php-23
 docker run --rm --interactive --tty   --volume $PWD:/app   --user $(id -u):$(id -g)   composer install
 ```
 
