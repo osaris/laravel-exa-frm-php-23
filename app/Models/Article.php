@@ -19,4 +19,9 @@ class Article extends Model
     {
         return $this->quantity == 0;
     }
+
+    public static function getStock() : int
+    {
+        return Article::sum('quantity');
+    }
 }
