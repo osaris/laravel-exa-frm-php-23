@@ -17,7 +17,9 @@
                     <input type="text" class="form-control" id="quantity" name="quantity" value="{{ old('quantity') }}">
                     @if($errors->has('quantity'))
                         <div class="text-danger">{{ $errors->first('quantity') }}</div>
-                    @endif                          
+                    @endif   
+                    <label for="nota" class="form-label">Nota</label>
+                    <input type="text" class="form-control" id="nota" name="nota" value="{{ old('nota') }}">                       
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
