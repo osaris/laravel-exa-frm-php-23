@@ -14,4 +14,9 @@ class Article extends Model
     protected $attributes = [
         'quantity' => 0,
     ];
+
+    public function isDeletable()
+    {
+        return $this->quantity == 0;
+    }
 }
