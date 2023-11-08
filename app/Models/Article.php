@@ -20,6 +20,12 @@ class Article extends Model
         return $this->quantity == 0;
     }
 
+    public function stock()
+    {
+        $this->quantity++;
+        $this->save();
+    }
+
     public static function getStock() : int
     {
         return Article::sum('quantity');

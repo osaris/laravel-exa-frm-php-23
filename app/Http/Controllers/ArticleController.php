@@ -73,4 +73,10 @@ class ArticleController extends Controller
         else
             return redirect()->route('articles.index')->with('error', 'Article stock must be 0 for deletion');
     }
+
+    public function stock(Article $article)
+    {
+        $article->stock();
+        return redirect()->route('articles.index')->with('success', 'Stock increased !');    
+    }
 }
