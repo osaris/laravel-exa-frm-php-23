@@ -22,7 +22,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('articles.create');
+        return view('articles.create', ['article' => new Article()]);
     }
 
     /**
@@ -47,15 +47,16 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('articles.edit', ['article' => $article]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Article $article)
+    public function update(StoreArticleRequest $request, Article $article)
     {
-        //
+        $article->update($request->except('_token', '_method'));
+        return redirect()->route('articles.index')->with('success', 'Article updated');
     }
 
     /**
